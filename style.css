@@ -1,0 +1,203 @@
+/* CSS Variables */
+:root {
+  --clr-primary-sedans: hsl(31, 77%, 52%);
+  --clr-primary-suvs: hsl(184, 100%, 22%);
+  --clr-primary-luxury: hsl(179, 100%, 13%);
+
+  --clr-neutral-light: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-xlight: hsl(0, 0%, 95%);
+
+  --fs-body: 0.938rem;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --ff-header: "Big Shoulders Display", sans-serif;
+  --ff-body: "Lexend Deca", sans-serif;
+}
+/* CSS reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Regular CSS */
+body {
+  background-color: var(--clr-neutral-xlight);
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+}
+
+.container {
+  margin: 2.5rem 1.5rem;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.card {
+  display: grid;
+  row-gap: 1em;
+  padding: 2.5rem;
+}
+
+.card h1 {
+  text-transform: uppercase;
+  font-family: var(--ff-header);
+  color: var(--clr-neutral-xlight);
+  font-weight: var(--fw-bold);
+}
+
+.card p {
+  color: var(--clr-neutral-light);
+}
+
+.sedans {
+  background-color: var(--clr-primary-sedans);
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+}
+
+.suvs {
+  background-color: var(--clr-primary-suvs);
+}
+
+.luxury {
+  background-color: var(--clr-primary-luxury);
+  border-bottom-left-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--clr-neutral-xlight);
+  border: 2px solid var(--clr-neutral-xlight);
+  border-radius: 1.875rem;
+  width: 160px;
+  padding: 0.625rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  background-color: transparent;
+}
+
+.sedans .btn:hover,
+.suvs .btn:hover,
+.luxury .btn:hover {
+  color: var(--clr-neutral-xlight);
+}
+
+.sedans .btn {
+  color: var(--clr-primary-sedans);
+}
+
+.suvs .btn {
+  color: var(--clr-primary-suvs);
+}
+
+.luxury .btn {
+  color: var(--clr-primary-luxury);
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  .container {
+    display: flex;
+    max-width: 1000px;
+    padding: 3.75rem;
+    margin: 0 auto;
+  }
+
+  .card p {
+    padding-bottom: 3.125rem;
+  }
+
+  .sedans,
+  .suvs,
+  .luxury {
+    border-radius: 0;
+  }
+
+  .sedans {
+    border-top-left-radius: 0.7rem;
+    border-bottom-left-radius: 0.7rem;
+  }
+
+  .luxury {
+    border-top-right-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+  }
+}
+
+/* Footer */
+.attribution {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: var(--fw-bold);
+}
+.attribution a {
+  text-decoration: none;
+}
+
+.attribution span {
+  color: var(--clr-primary-sedans);
+}
+
+.attribution a:nth-child(2) {
+  color: var(--clr-primary-suvs);
+}
+
+.attribution a,
+span:nth-child(3) {
+  color: var(--clr-primary-luxury);
+}
